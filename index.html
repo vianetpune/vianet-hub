@@ -10,127 +10,114 @@
             background-color: #020617;
             color: #f8fafc;
         }
-        .container-max { max-width: 1280px; margin: 0 auto; }
-        .community-link { display: inline-block; margin: 8px; }
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-white">
-    <div id="root"></div>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script>
-        const { useState, useEffect } = React;
+    <!-- Navigation -->
+    <nav class="navbar-fixed bg-slate-900 border-b border-slate-800 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <h1 class="text-2xl font-bold text-emerald-400">VIANET</h1>
+            <p class="text-sm text-gray-400">Tech & Gifting Distribution Hub 2025</p>
+        </div>
+    </nav>
 
-        function App() {
-            const [scrolled, setScrolled] = useState(false);
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen pt-20 pb-12 flex items-center justify-center text-center">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-5xl font-bold mb-4">Welcome to VIANET</h2>
+            <p class="text-xl text-gray-300 mb-8">India's premier distribution hub for flagship technology and bespoke corporate gifting.</p>
+            <div class="inline-block bg-emerald-500 text-black px-8 py-3 rounded-lg font-semibold hover:bg-emerald-400 transition">Explore Our Communities</div>
+        </div>
+    </section>
 
-            useEffect(() => {
-                const handleScroll = () => setScrolled(window.scrollY > 50);
-                window.addEventListener('scroll', handleScroll);
-                return () => window.removeEventListener('scroll', handleScroll);
-            }, []);
+    <!-- Communities Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12">Join Our Communities</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <a href="https://chat.whatsapp.com/HoQoFtCugjs84rhsr8US26" target="_blank" class="card-hover bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-lg border border-slate-700 hover:border-emerald-500 text-center">
+                    <div class="text-3xl mb-3">🛍️</div>
+                    <h3 class="text-xl font-bold mb-2">Vianet Pune Products</h3>
+                    <p class="text-gray-400 mb-4">Exclusive product updates and offers</p>
+                    <span class="text-emerald-400 font-semibold">Join WhatsApp Group →</span>
+                </a>
 
-            return React.createElement('div', { className: 'min-h-screen w-full bg-slate-950' },
-                // Navigation
-                React.createElement('nav', {
-                    className: `fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-                        scrolled ? 'bg-slate-950/90 backdrop-blur-2xl border-b border-white/10 py-4' : 'bg-transparent py-8'
-                    }`
-                },
-                    React.createElement('div', { className: 'container-max px-6 flex justify-between items-center' },
-                        React.createElement('div', { className: 'flex items-center gap-4' },
-                            React.createElement('div', { className: 'w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center font-black text-slate-950' }, 'V'),
-                            React.createElement('div', {},
-                                React.createElement('h1', { className: 'text-2xl font-black text-white' }, 'VIANET'),
-                                React.createElement('p', { className: 'text-sm font-bold text-emerald-500' }, 'Tech Gifting Hub')
-                            )
-                        ),
-                        React.createElement('div', { className: 'hidden md:flex items-center gap-8' },
-                            React.createElement('a', { href: '#communities', className: 'text-sm font-bold text-emerald-400 hover:text-emerald-300' }, 'Communities'),
-                            React.createElement('a', { href: '#contact', className: 'text-sm font-bold text-emerald-400 hover:text-emerald-300' }, 'Contact'),
-                            React.createElement('a', { href: 'https://bit.ly/4chu430', target: '_blank', rel: 'noopener noreferrer', className: 'bg-emerald-500 text-slate-950 px-6 py-2 rounded font-black text-sm hover:bg-emerald-400' }, 'Catalogues')
-                        )
-                    )
-                ),
+                <!-- Card 2 -->
+                <a href="https://whatsapp.com/channel/0029Va97sAR1L7DI36VxY71Y" target="_blank" class="card-hover bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-lg border border-slate-700 hover:border-emerald-500 text-center">
+                    <div class="text-3xl mb-3">📢</div>
+                    <h3 class="text-xl font-bold mb-2">Vianet Tech Channel</h3>
+                    <p class="text-gray-400 mb-4">Latest tech announcements and news</p>
+                    <span class="text-emerald-400 font-semibold">Join Channel →</span>
+                </a>
 
-                // Main Content
-                React.createElement('main', { className: 'pt-32 pb-20 px-6' },
-                    React.createElement('div', { className: 'container-max' },
-                        // Hero Section
-                        React.createElement('div', { className: 'text-center py-20' },
-                            React.createElement('h2', { className: 'text-5xl md:text-6xl font-black mb-6 text-white' }, 'Welcome to VIANET Hub'),
-                            React.createElement('p', { className: 'text-xl text-gray-300 mb-8 max-w-2xl mx-auto' }, "India's Premier Distribution Hub for Technology & Bespoke Corporate Gifting")
-                        ),
+                <!-- Card 3 -->
+                <a href="https://bit.ly/4chu430" target="_blank" class="card-hover bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-lg border border-slate-700 hover:border-emerald-500 text-center">
+                    <div class="text-3xl mb-3">🎯</div>
+                    <h3 class="text-xl font-bold mb-2">Catalogues</h3>
+                    <p class="text-gray-400 mb-4">Browse our complete product catalogues</p>
+                    <span class="text-emerald-400 font-semibold">View Catalogues →</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                        // WhatsApp Communities Section
-                        React.createElement('section', { id: 'communities', className: 'py-20' },
-                            React.createElement('h2', { className: 'text-4xl font-black mb-12 text-center text-white' }, 'WhatsApp Communities'),
-                            React.createElement('div', { className: 'grid md:grid-cols-2 lg:grid-cols-3 gap-6' },
-                                React.createElement('a', {
-                                    href: 'https://chat.whatsapp.com/HoQoFtCugjs84rhsr8US26',
-                                    target: '_blank',
-                                    rel: 'noopener noreferrer',
-                                    className: 'bg-slate-900 p-6 rounded-lg border border-emerald-500 hover:bg-slate-800 transition'
-                                },
-                                    React.createElement('div', { className: 'text-4xl mb-3' }, '🛍️'),
-                                    React.createElement('h3', { className: 'text-xl font-bold mb-2' }, 'Vianet Products'),
-                                    React.createElement('p', { className: 'text-gray-400' }, 'Latest product drops and exclusive deals')
-                                ),
-                                React.createElement('a', {
-                                    href: 'https://whatsapp.com/channel/0029Va97sAR1L7DI36VxY71Y',
-                                    target: '_blank',
-                                    rel: 'noopener noreferrer',
-                                    className: 'bg-slate-900 p-6 rounded-lg border border-emerald-500 hover:bg-slate-800 transition'
-                                },
-                                    React.createElement('div', { className: 'text-4xl mb-3' }, '📢'),
-                                    React.createElement('h3', { className: 'text-xl font-bold mb-2' }, 'Tech Channel'),
-                                    React.createElement('p', { className: 'text-gray-400' }, 'Tech updates and announcements')
-                                ),
-                                React.createElement('a', {
-                                    href: 'https://bit.ly/4chu430',
-                                    target: '_blank',
-                                    rel: 'noopener noreferrer',
-                                    className: 'bg-slate-900 p-6 rounded-lg border border-emerald-500 hover:bg-slate-800 transition'
-                                },
-                                    React.createElement('div', { className: 'text-4xl mb-3' }, '🎯'),
-                                    React.createElement('h3', { className: 'text-xl font-bold mb-2' }, 'Catalogues'),
-                                    React.createElement('p', { className: 'text-gray-400' }, 'Browse all product catalogs')
-                                )
-                            )
-                        ),
+    <!-- Contact Section -->
+    <section class="py-16 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Address -->
+                <div class="bg-slate-700 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-emerald-400">📍 Office Address</h3>
+                    <p class="text-gray-300 mb-4">
+                        1st floor, 124/125 Ashoka Pavilion,<br>
+                        Ambedkar Road, Pune 411001
+                    </p>
+                    <a href="https://maps.google.com/?q=1st+floor,+124/125+Ashoka+Pavilion,+Ambedkar+Road,+Pune+411001" target="_blank" class="inline-block bg-emerald-500 text-black px-6 py-2 rounded font-semibold hover:bg-emerald-400 transition">
+                        View on Google Maps
+                    </a>
+                </div>
 
-                        // Contact Section
-                        React.createElement('section', { id: 'contact', className: 'py-20' },
-                            React.createElement('h2', { className: 'text-4xl font-black mb-12 text-center text-white' }, 'Contact Us'),
-                            React.createElement('div', { className: 'max-w-2xl mx-auto bg-slate-900 p-8 rounded-lg border border-emerald-500' },
-                                React.createElement('h3', { className: 'text-2xl font-bold mb-4 flex items-center gap-2' },
-                                    React.createElement('span', {}, '📍'),
-                                    'Office Address'
-                                ),
-                                React.createElement('p', { className: 'text-gray-300 mb-2' }, '1st Floor'),
-                                React.createElement('p', { className: 'text-gray-300 mb-2' }, '124/125 Ashoka Pavillion'),
-                                React.createElement('p', { className: 'text-gray-300 mb-4' }, 'Ambedkar Road, Pune 411001'),
-                                React.createElement('a', {
-                                    href: 'https://maps.google.com/?q=1st+floor,+124/125+Ashoka+Pavillion,+Ambedkar+Road,+Pune+411001',
-                                    target: '_blank',
-                                    rel: 'noopener noreferrer',
-                                    className: 'inline-block bg-emerald-500 text-slate-950 px-6 py-2 rounded font-bold hover:bg-emerald-400 transition'
-                                }, 'View on Google Maps')
-                            )
-                        )
-                    )
-                ),
+                <!-- Contact Info -->
+                <div class="bg-slate-700 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-emerald-400">📞 Contact Us</h3>
+                    <p class="text-gray-300 mb-2"><strong>Phone:</strong> Call/WhatsApp for more details</p>
+                    <p class="text-gray-300 mb-4"><strong>Email:</strong> Contact us via WhatsApp channels</p>
+                    <div class="pt-4 border-t border-slate-600">
+                        <p class="text-sm text-gray-400">Available Monday - Friday, 9AM - 6PM IST</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                // Footer
-                React.createElement('footer', { className: 'bg-slate-900 border-t border-slate-800 py-8 mt-20' },
-                    React.createElement('div', { className: 'container-max px-6 text-center text-gray-400' },
-                        React.createElement('p', {}, '© 2025 VIANET. All rights reserved.')
-                    )
-                )
-            );
-        }
-
-        ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
-    </script>
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 px-4">
+        <div class="container mx-auto max-w-6xl text-center">
+            <p class="text-gray-400 mb-2">© 2025 VIANET. All rights reserved.</p>
+            <p class="text-sm text-gray-500">Tech & Gifting Distribution Hub | India's Premier Distribution Network</p>
+        </div>
+    </footer>
 </body>
 </html>

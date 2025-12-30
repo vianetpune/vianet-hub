@@ -3,76 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vianet Tech & Gifting Distribution Hub 2025</title>
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="India's premier distribution hub for flagship technology and bespoke corporate gifting.">
-    <!-- Dependencies -->
+    <title>VIANET - Tech & Gifting Distribution Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100vh;
+        body {
             background-color: #020617;
             color: #f8fafc;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            font-family: Inter, sans-serif;
-            scroll-behavior: smooth;
         }
-        #root {
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .glass {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .animate-blob {
-            animation: blob 15s infinite alternate;
-        }
-        @keyframes blob {
-            0% { transform: translate(0px, 0px) scale(1); opacity: 0.3; }
-            50% { transform: translate(20px, -30px) scale(1.1); opacity: 0.5; }
-            100% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.3; }
-        }
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #020617;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 10px;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        .container-max { max-width: 1280px; margin: 0 auto; }
+        .community-link { display: inline-block; margin: 8px; }
     </style>
-    <script type="importmap">
-    {
-        "imports": {
-            "react": "https://esm.sh/react@18.2.0",
-            "react-dom": "https://esm.sh/react-dom@18.2.0"
-        }
-    }
-    </script>
-    <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body class="bg-slate-950 text-white">
     <div id="root"></div>
-    <!-- The environment automatically handles the transpilation and import of index.tsx -->
-    <script type="module" src="index.tsx"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script>
+        const { useState, useEffect } = React;
+
+        function App() {
+            const [scrolled, setScrolled] = useState(false);
+
+            useEffect(() => {
+                const handleScroll = () => setScrolled(window.scrollY > 50);
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            return React.createElement('div', { className: 'min-h-screen w-full bg-slate-950' },
+                // Navigation
+                React.createElement('nav', {
+                    className: `fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+                        scrolled ? 'bg-slate-950/90 backdrop-blur-2xl border-b border-white/10 py-4' : 'bg-transparent py-8'
+                    }`
+                },
+                    React.createElement('div', { className: 'container-max px-6 flex justify-between items-center' },
+                        React.createElement('div', { className: 'flex items-center gap-4' },
+                            React.createElement('div', { className: 'w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center font-black text-slate-950' }, 'V'),
+                            React.createElement('div', {},
+                                React.createElement('h1', { className: 'text-2xl font-black text-white' }, 'VIANET'),
+                                React.createElement('p', { className: 'text-sm font-bold text-emerald-500' }, 'Tech Gifting Hub')
+                            )
+                        ),
+                        React.createElement('div', { className: 'hidden md:flex items-center gap-8' },
+                            React.createElement('a', { href: '#communities', className: 'text-sm font-bold text-emerald-400 hover:text-emerald-300' }, 'Communities'),
+                            React.createElement('a', { href: '#contact', className: 'text-sm font-bold text-emerald-400 hover:text-emerald-300' }, 'Contact'),
+                            React.createElement('a', { href: 'https://bit.ly/4chu430', target: '_blank', rel: 'noopener noreferrer', className: 'bg-emerald-500 text-slate-950 px-6 py-2 rounded font-black text-sm hover:bg-emerald-400' }, 'Catalogues')
+                        )
+                    )
+                ),
+
+                // Main Content
+                React.createElement('main', { className: 'pt-32 pb-20 px-6' },
+                    React.createElement('div', { className: 'container-max' },
+                        // Hero Section
+                        React.createElement('div', { className: 'text-center py-20' },
+                            React.createElement('h2', { className: 'text-5xl md:text-6xl font-black mb-6 text-white' }, 'Welcome to VIANET Hub'),
+                            React.createElement('p', { className: 'text-xl text-gray-300 mb-8 max-w-2xl mx-auto' }, "India's Premier Distribution Hub for Technology & Bespoke Corporate Gifting")
+                        ),
+
+                        // WhatsApp Communities Section
+                        React.createElement('section', { id: 'communities', className: 'py-20' },
+                            React.createElement('h2', { className: 'text-4xl font-black mb-12 text-center text-white' }, 'WhatsApp Communities'),
+                            React.createElement('div', { className: 'grid md:grid-cols-2 lg:grid-cols-3 gap-6' },
+                                React.createElement('a', {
+                                    href: 'https://chat.whatsapp.com/HoQoFtCugjs84rhsr8US26',
+                                    target: '_blank',
+                                    rel: 'noopener noreferrer',
+                                    className: 'bg-slate-900 p-6 rounded-lg border border-emerald-500 hover:bg-slate-800 transition'
+                                },
+                                    React.createElement('div', { className: 'text-4xl mb-3' }, '🛍️'),
+                                    React.createElement('h3', { className: 'text-xl font-bold mb-2' }, 'Vianet Products'),
+                                    React.createElement('p', { className: 'text-gray-400' }, 'Latest product drops and exclusive deals')
+                                ),
+                                React.createElement('a', {
+                                    href: 'https://whatsapp.com/channel/0029Va97sAR1L7DI36VxY71Y',
+                                    target: '_blank',
+                                    rel: 'noopener noreferrer',
+                                    className: 'bg-slate-900 p-6 rounded-lg border border-emerald-500 hover:bg-slate-800 transition'
+                                },
+                                    React.createElement('div', { className: 'text-4xl mb-3' }, '📢'),
+                                    React.createElement('h3', { className: 'text-xl font-bold mb-2' }, 'Tech Channel'),
+                                    React.createElement('p', { className: 'text-gray-400' }, 'Tech updates and announcements')
+                                ),
+                                React.createElement('a', {
+                                    href: 'https://bit.ly/4chu430',
+                                    target: '_blank',
+                                    rel: 'noopener noreferrer',
+                                    className: 'bg-slate-900 p-6 rounded-lg border border-emerald-500 hover:bg-slate-800 transition'
+                                },
+                                    React.createElement('div', { className: 'text-4xl mb-3' }, '🎯'),
+                                    React.createElement('h3', { className: 'text-xl font-bold mb-2' }, 'Catalogues'),
+                                    React.createElement('p', { className: 'text-gray-400' }, 'Browse all product catalogs')
+                                )
+                            )
+                        ),
+
+                        // Contact Section
+                        React.createElement('section', { id: 'contact', className: 'py-20' },
+                            React.createElement('h2', { className: 'text-4xl font-black mb-12 text-center text-white' }, 'Contact Us'),
+                            React.createElement('div', { className: 'max-w-2xl mx-auto bg-slate-900 p-8 rounded-lg border border-emerald-500' },
+                                React.createElement('h3', { className: 'text-2xl font-bold mb-4 flex items-center gap-2' },
+                                    React.createElement('span', {}, '📍'),
+                                    'Office Address'
+                                ),
+                                React.createElement('p', { className: 'text-gray-300 mb-2' }, '1st Floor'),
+                                React.createElement('p', { className: 'text-gray-300 mb-2' }, '124/125 Ashoka Pavillion'),
+                                React.createElement('p', { className: 'text-gray-300 mb-4' }, 'Ambedkar Road, Pune 411001'),
+                                React.createElement('a', {
+                                    href: 'https://maps.google.com/?q=1st+floor,+124/125+Ashoka+Pavillion,+Ambedkar+Road,+Pune+411001',
+                                    target: '_blank',
+                                    rel: 'noopener noreferrer',
+                                    className: 'inline-block bg-emerald-500 text-slate-950 px-6 py-2 rounded font-bold hover:bg-emerald-400 transition'
+                                }, 'View on Google Maps')
+                            )
+                        )
+                    )
+                ),
+
+                // Footer
+                React.createElement('footer', { className: 'bg-slate-900 border-t border-slate-800 py-8 mt-20' },
+                    React.createElement('div', { className: 'container-max px-6 text-center text-gray-400' },
+                        React.createElement('p', {}, '© 2025 VIANET. All rights reserved.')
+                    )
+                )
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+    </script>
 </body>
 </html>

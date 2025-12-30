@@ -1,335 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIANET - Tech & Gifting Distribution Hub 2025</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #0f172a;
-            color: #f1f5f9;
-            line-height: 1.6;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 20px 40px;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
-        }
-
-        nav h1 {
-            font-size: 24px;
-            color: #10b981;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        nav p {
-            font-size: 12px;
-            color: #94a3b8;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 140px 40px 100px;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #f1f5f9;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #cbd5e1;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: #10b981;
-            color: #000;
-            padding: 12px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #059669;
-        }
-
-        .communities {
-            padding: 80px 40px;
-            background-color: #0f172a;
-            text-align: center;
-        }
-
-        .communities h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 50px;
-            color: #f1f5f9;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 1px solid #334155;
-            padding: 40px 30px;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(16, 185, 129, 0.2);
-            border-color: #10b981;
-        }
-
-        .card-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #f1f5f9;
-        }
-
-        .card p {
-            color: #94a3b8;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .card-link {
-            color: #10b981;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .contact {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 80px 40px;
-        }
-
-        .contact h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 50px;
-            color: #f1f5f9;
-            text-align: center;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-box {
-            background-color: #0f172a;
-            border: 1px solid #334155;
-            padding: 30px;
-            border-radius: 12px;
-        }
-
-        .contact-box h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: #10b981;
-            margin-bottom: 15px;
-        }
-
-        .contact-box p {
-            color: #cbd5e1;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .contact-box strong {
-            color: #f1f5f9;
-        }
-
-        .map-button {
-            display: inline-block;
-            background-color: #10b981;
-            color: #000;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 15px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .map-button:hover {
-            background-color: #059669;
-        }
-
-        footer {
-            background-color: #020617;
-            border-top: 1px solid #334155;
-            padding: 30px 40px;
-            text-align: center;
-        }
-
-        footer p {
-            color: #94a3b8;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .container-max {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
-            }
-
-            .hero {
-                padding: 100px 20px 60px;
-            }
-
-            .hero h2 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .communities,
-            .contact {
-                padding: 40px 20px;
-            }
-
-            .communities h2,
-            .contact h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<title>VIANET - Tech & Gifting Distribution Hub 2025</title>
+<style>
+body { background: #0f172a; color: #fff; font-family: Arial; margin: 0; padding: 20px; }
+h1 { color: #10b981; }
+h2 { margin-top: 40px; }
+.card { background: #1e293b; padding: 20px; margin: 15px 0; border-radius: 8px; }
+a { color: #10b981; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <h1>VIANET</h1>
-        <p>Tech & Gifting Distribution Hub 2025</p>
-    </nav>
+<h1>VIANET</h1>
+<p>Tech & Gifting Distribution Hub 2025</p>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container-max">
-            <h2>Welcome to VIANET</h2>
-            <p>India's premier distribution hub for flagship technology and bespoke corporate gifting.</p>
-            <button class="btn-primary">Explore Our Communities</button>
-        </div>
-    </section>
+<h2>Join Our Communities</h2>
 
-    <!-- Communities Section -->
-    <section class="communities">
-        <div class="container-max">
-            <h2>Join Our Communities</h2>
-            <div class="cards-grid">
-                <!-- Card 1 -->
-                <a href="https://chat.whatsapp.com/HoQoFtCugjs84rhsr8US26" class="card" target="_blank">
-                    <div class="card-icon">🛍️</div>
-                    <h3>Vianet Pune Products</h3>
-                    <p>Exclusive product updates and offers</p>
-                    <span class="card-link">Join WhatsApp Group →</span>
-                </a>
+<div class="card">
+<h3>Vianet Pune Products</h3>
+<p>Exclusive product updates and offers</p>
+<a href="https://chat.whatsapp.com/HoQoFtCugjs84rhsr8US26" target="_blank">Join WhatsApp Group</a>
+</div>
 
-                <!-- Card 2 -->
-                <a href="https://whatsapp.com/channel/0029Va97sAR1L7DI36VxY71Y" class="card" target="_blank">
-                    <div class="card-icon">📢</div>
-                    <h3>Vianet Tech Channel</h3>
-                    <p>Latest tech announcements and news</p>
-                    <span class="card-link">Join Channel →</span>
-                </a>
+<div class="card">
+<h3>Vianet Tech Channel</h3>
+<p>Latest tech announcements and news</p>
+<a href="https://whatsapp.com/channel/0029Va97sAR1L7DI36VxY71Y" target="_blank">Join Channel</a>
+</div>
 
-                <!-- Card 3 -->
-                <a href="https://bit.ly/4chu430" class="card" target="_blank">
-                    <div class="card-icon">📋</div>
-                    <h3>Catalogues</h3>
-                    <p>Browse our complete product catalogues</p>
-                    <span class="card-link">View Catalogues →</span>
-                </a>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Catalogues</h3>
+<p>Browse our complete product catalogues</p>
+<a href="https://bit.ly/4chu430" target="_blank">View Catalogues</a>
+</div>
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container-max">
-            <h2>Get In Touch</h2>
-            <div class="contact-grid">
-                <!-- Address -->
-                <div class="contact-box">
-                    <h3>📍 Office Address</h3>
-                    <p>1st floor, 124/125 Ashoka Pavilion,<br>Ambedkar Road, Pune 411001</p>
-                    <a href="https://maps.google.com/?q=1st+floor,+124/125+Ashoka+Pavilion,+Ambedkar+Road,+Pune+411001" class="map-button" target="_blank">View on Google Maps</a>
-                </div>
+<h2>Contact Us</h2>
 
-                <!-- Contact Info -->
-                <div class="contact-box">
-                    <h3>📞 Contact Us</h3>
-                    <p><strong>Phone:</strong> Call/WhatsApp for more details</p>
-                    <p><strong>Email:</strong> Contact us via WhatsApp channels</p>
-                    <p style="border-top: 1px solid #334155; padding-top: 15px; margin-top: 15px;">Available Monday - Friday, 9AM - 6PM IST</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Office Address</h3>
+<p>1st floor, 124/125 Ashoka Pavilion<br>Ambedkar Road, Pune 411001</p>
+<a href="https://maps.google.com/?q=1st+floor,+124/125+Ashoka+Pavilion,+Ambedkar+Road,+Pune+411001" target="_blank">View on Google Maps</a>
+</div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 VIANET. All rights reserved.</p>
-        <p>Tech & Gifting Distribution Hub | India's Premier Distribution Network</p>
-    </footer>
+<div class="card">
+<h3>Contact Info</h3>
+<p><strong>Phone:</strong> Call/WhatsApp for more details</p>
+<p><strong>Email:</strong> Contact us via WhatsApp channels</p>
+<p>Available Monday - Friday, 9AM - 6PM IST</p>
+</div>
+
+<footer style="margin-top: 60px; border-top: 1px solid #334155; padding-top: 20px; text-align: center; color: #94a3b8;">
+<p>© 2025 VIANET. All rights reserved.</p>
+<p>Tech & Gifting Distribution Hub | India's Premier Distribution Network</p>
+</footer>
+
 </body>
 </html>

@@ -1,0 +1,4 @@
+exclude:
+  - App.tsx
+  - index.tsx
+  - components/

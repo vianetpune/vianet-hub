@@ -1,166 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VIANET - Tech & Gifting Distribution Hub</title>
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vianet Tech & Gifting Distribution Hub 2025</title>
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="India's premier distribution hub for flagship technology and bespoke corporate gifting.">
+    <!-- Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-family: Inter, sans-serif;
+            scroll-behavior: smooth;
+        }
+        #root {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .animate-blob {
+            animation: blob 15s infinite alternate;
+        }
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); opacity: 0.3; }
+            50% { transform: translate(20px, -30px) scale(1.1); opacity: 0.5; }
+            100% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.3; }
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <script type="importmap">
+    {
+        "imports": {
+            "react": "https://esm.sh/react@18.2.0",
+            "react-dom": "https://esm.sh/react-dom@18.2.0"
+        }
     }
-    body {
-      width: 100vw;
-      overflow-x: hidden;
-    }
-    .gradient-text {
-      background: linear-gradient(135deg, #34d399, #10b981);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-  </style>
+    </script>
+    <link rel="stylesheet" href="index.css">
 </head>
-<body class="bg-slate-950 text-white">
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-screen z-50 bg-slate-950/95 backdrop-blur-sm border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-emerald-400 rounded-full flex items-center justify-center">
-          <span class="font-black text-slate-950 text-lg">V</span>
-        </div>
-        <div>
-          <h1 class="font-black text-white text-lg">VIANET</h1>
-          <p class="text-emerald-400 text-xs">TECH & GIFTING HUB</p>
-        </div>
-      </div>
-      <div class="flex gap-8 hidden md:flex">
-        <a href="#communities" class="text-sm uppercase tracking-wider hover:text-emerald-400 transition">Communities</a>
-        <a href="#social" class="text-sm uppercase tracking-wider hover:text-emerald-400 transition">Social</a>
-        <a href="#contact" class="text-sm uppercase tracking-wider hover:text-emerald-400 transition">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <div class="w-screen min-h-screen bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 pt-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
-      <!-- Brand Grid -->
-      <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-4 mb-12 opacity-40 text-xs sm:text-sm">
-        <p class="uppercase tracking-wider">Marshall</p>
-        <p class="uppercase tracking-wider">Go</p>
-        <p class="uppercase tracking-wider">Boult</p>
-        <p class="uppercase tracking-wider">Boat</p>
-        <p class="uppercase tracking-wider">Amazon</p>
-        <p class="uppercase tracking-wider">Saregama</p>
-        <p class="uppercase tracking-wider">Techno</p>
-        <p class="uppercase tracking-wider">Pebble</p>
-      </div>
-
-      <!-- Tagline -->
-      <div class="mb-12">
-        <p class="text-emerald-400 text-center uppercase tracking-[0.15em] text-xs sm:text-sm mb-6 sm:mb-8">The Source • The Repository • The Hub</p>
-      </div>
-
-      <!-- Main Heading -->
-      <h1 class="text-5xl sm:text-7xl md:text-8xl font-black text-center mb-6 sm:mb-8 leading-tight">VIANET</h1>
-      <p class="text-lg sm:text-xl text-center text-gray-400 mb-8 sm:mb-12">TECH & GIFTING DISTRIBUTION HUB</p>
-
-      <!-- Call to Action -->
-      <div class="text-center mb-16">
-        <p class="text-2xl sm:text-4xl font-black text-emerald-400 italic mb-6 sm:mb-8">ARE YOU MISSING OUT?</p>
-        <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-          The ultimate gateway to world-class tech. Access direct inventory and community-exclusive drops via WhatsApp.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-          <a href="#communities" class="px-6 sm:px-8 py-3 bg-emerald-400 text-slate-950 font-bold rounded-lg hover:bg-emerald-300 transition text-center">Join Communities</a>
-          <a href="https://bit.ly/4chu430" target="_blank" class="px-6 sm:px-8 py-3 border border-emerald-400 text-emerald-400 font-bold rounded-lg hover:bg-emerald-400 hover:text-slate-950 transition text-center">Browse Catalogue</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Communities Section -->
-  <section id="communities" class="w-screen py-16 sm:py-20 bg-slate-950 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12">WhatsApp Communities</h2>
-      
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        <!-- Community 1 -->
-        <div class="bg-slate-900 p-6 sm:p-8 rounded-xl border border-white/10 hover:border-emerald-400 transition">
-          <div class="text-4xl mb-4">🛍️</div>
-          <h3 class="text-xl font-bold mb-2">Vianet Products</h3>
-          <p class="text-gray-400 mb-6 text-sm sm:text-base">Latest product drops and exclusive deals</p>
-          <a href="https://chat.whatsapp.com/HoQoFtCugjs84rhsr8US26" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm sm:text-base">Join Channel →</a>
-        </div>
-
-        <!-- Community 2 -->
-        <div class="bg-slate-900 p-6 sm:p-8 rounded-xl border border-white/10 hover:border-emerald-400 transition">
-          <div class="text-4xl mb-4">📢</div>
-          <h3 class="text-xl font-bold mb-2">Tech Channel</h3>
-          <p class="text-gray-400 mb-6 text-sm sm:text-base">Tech updates and announcements</p>
-          <a href="https://whatsapp.com/channel/0029Va97sAR1L7DI36VxY71Y" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm sm:text-base">Join Channel →</a>
-        </div>
-
-        <!-- Community 3 -->
-        <div class="bg-slate-900 p-6 sm:p-8 rounded-xl border border-white/10 hover:border-emerald-400 transition">
-          <div class="text-4xl mb-4">✨</div>
-          <h3 class="text-xl font-bold mb-2">Vianet Moments</h3>
-          <p class="text-gray-400 mb-6 text-sm sm:text-base">Community highlights and stories</p>
-          <a href="#" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm sm:text-base">Coming Soon</a>
-        </div>
-
-        <!-- Community 4 -->
-        <div class="bg-slate-900 p-6 sm:p-8 rounded-xl border border-white/10 hover:border-emerald-400 transition">
-          <div class="text-4xl mb-4">💎</div>
-          <h3 class="text-xl font-bold mb-2">Premium Cases</h3>
-          <p class="text-gray-400 mb-6 text-sm sm:text-base">Exclusive premium accessories</p>
-          <a href="#" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm sm:text-base">Coming Soon</a>
-        </div>
-
-        <!-- Community 5 -->
-        <div class="bg-slate-900 p-6 sm:p-8 rounded-xl border border-white/10 hover:border-emerald-400 transition">
-          <div class="text-4xl mb-4">🞯</div>
-          <h3 class="text-xl font-bold mb-2">Catalogues</h3>
-          <p class="text-gray-400 mb-6 text-sm sm:text-base">Explore all our product catalogues</p>
-          <a href="https://bit.ly/4chu430" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm sm:text-base">Browse →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="w-screen py-16 sm:py-20 bg-slate-900 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 sm:mb-12">Get in Touch</h2>
-      <p class="text-base sm:text-lg text-gray-300 mb-8 sm:mb-12">Questions? Interested in corporate gifting? Reach out!</p>
-      
-      <div class="grid sm:grid-cols-2 gap-8 sm:gap-12">
-        <div>
-          <h3 class="text-lg sm:text-xl font-bold mb-4">Direct Chat</h3>
-          <a href="tel:+919923812345" class="text-emerald-400 hover:text-emerald-300 text-lg sm:text-xl font-semibold break-all">
-            +91-99238-12345
-          </a>
-        </div>
-        <div>
-          <h3 class="text-lg sm:text-xl font-bold mb-4">Address</h3>
-          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-            1st floor, 124/125 Ashoka Pavillion<br>
-            Ambedkar Road<br>
-            Pune 411001, India
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="w-screen bg-slate-950 border-t border-white/10 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center text-gray-500 text-xs sm:text-sm">
-      <p>&copy; 2025 VIANET. All rights reserved. | Tech & Gifting Distribution Hub</p>
-    </div>
-  </footer>
+<body>
+    <div id="root"></div>
+    <!-- The environment automatically handles the transpilation and import of index.tsx -->
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>
